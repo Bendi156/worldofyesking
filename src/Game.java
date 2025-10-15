@@ -4,7 +4,7 @@ import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Game {
-
+    Player player;
     public Game(){
         Scene entrance = new Scene("A vár bejáratánál állsz! Északra van egy nagy faajtó található");
         Scene hall = new Scene("A nagyteremben vagy. Keltre és Nyugatra is van egy-egy ajtó");
@@ -14,6 +14,9 @@ public class Game {
         hall.setExit(Direction.DEL, entrance);
         hall.setExit(Direction.NYUGAT, armory);
         armory.setExit(Direction.KELET, hall);
+
+        player = new Player(entrance);
+
     }
 
 
@@ -28,6 +31,7 @@ public class Game {
     private void play() {
         Scanner scanner = new Scanner(System.in);
         display("Üdv a várkalandban!");
+        display(player.getScene().getDescription());
 
         // ez maga a játék ciklus
         while(true){
