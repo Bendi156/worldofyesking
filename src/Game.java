@@ -4,6 +4,19 @@ import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Game {
+
+    public Game(){
+        Scene entrance = new Scene("A vár bejáratánál állsz! Északra van egy nagy faajtó található");
+        Scene hall = new Scene("A nagyteremben vagy. Keltre és Nyugatra is van egy-egy ajtó");
+        Scene armory = new Scene("A fegyvertárban vagy. Látsz egy fényes kardot az állványon");
+
+        entrance.setExit(Direction.ESZAK, hall);
+        hall.setExit(Direction.DEL, entrance);
+        hall.setExit(Direction.NYUGAT, armory);
+        armory.setExit(Direction.KELET, hall);
+    }
+
+
     public static void main(String[] args) {
         //git remote add origin URL
         //git remote add origin https://github.com/Bendi156/worldofyesking.git
