@@ -14,4 +14,13 @@ public enum Direction {
     public String toString() {
         return direction;
     }
+
+    public static Direction fromString(String text){
+        for (Direction d: Direction.values()) {
+            if(d.direction.equalsIgnoreCase(text)){
+                return d;
+            }
+        }
+        return null;
+    }
 }

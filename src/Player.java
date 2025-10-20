@@ -9,7 +9,7 @@ public class Player {
         inventory = new ArrayList<>();
     }
 
-    public Scene getScene(){
+    public Scene getCurrentScene(){
         return scene;
     }
 
