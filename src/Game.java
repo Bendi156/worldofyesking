@@ -67,9 +67,7 @@ public class Game {
         player.setScene(nextScene);
     }
 
-    private void display(String message) {
-        System.out.println(message);
-    }
+
 
     public static void main(String[] args) {
 
